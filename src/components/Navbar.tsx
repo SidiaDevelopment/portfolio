@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Github, Linkedin } from "lucide-react";
 
 const navLinks = [
   { label: "About", href: "#about" },
@@ -9,6 +9,11 @@ const navLinks = [
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
+];
+
+const socialLinks = [
+  { label: "GitHub", href: "https://github.com/SidiaDevelopment", icon: Github },
+  { label: "LinkedIn", href: "https://linkedin.com/in/marvin-fischer", icon: Linkedin },
 ];
 
 export default function Navbar() {
@@ -29,8 +34,11 @@ export default function Navbar() {
           : "border-transparent bg-transparent"
       }`}
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-center px-6 py-4">
-        {/* Desktop */}
+      <div className="mx-auto grid max-w-6xl grid-cols-[1fr_auto_1fr] items-center gap-6 px-6 py-4">
+        {/* Left placeholder (keeps nav truly centred) */}
+        <div />
+
+        {/* Desktop nav */}
         <ul className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (
             <li key={link.href}>
@@ -45,20 +53,34 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Mobile toggle */}
-        <button
-          className="ml-auto text-dim md:hidden"
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle menu"
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        {/* Right: quick contacts (desktop) + mobile hamburger */}
+        <div className="flex items-center justify-end gap-4">
+          {socialLinks.map((social) => (
+            <a
+              key={social.label}
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={social.label}
+              className="hidden text-dim transition-colors hover:text-neon-400 md:inline-flex"
+            >
+              <social.icon size={20} />
+            </a>
+          ))}
+          <button
+            className="text-dim md:hidden"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
       <div
         className={`overflow-hidden border-t border-neon-500/10 bg-cyber-950/95 backdrop-blur-xl transition-all duration-300 md:hidden ${
-          isOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0 border-t-0"
+          isOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0 border-t-0"
         }`}
       >
         <ul className="flex flex-col gap-4 px-6 py-6">
@@ -73,6 +95,20 @@ export default function Navbar() {
               </a>
             </li>
           ))}
+          <li className="mt-2 flex gap-5 border-t border-neon-500/10 pt-4">
+            {socialLinks.map((social) => (
+              <a
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={social.label}
+                className="text-dim transition-colors hover:text-neon-400"
+              >
+                <social.icon size={22} />
+              </a>
+            ))}
+          </li>
         </ul>
       </div>
     </nav>
