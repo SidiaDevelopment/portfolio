@@ -1,0 +1,15 @@
+node_modules
+.next
+out
+.git
+.gitignore
+.env*
+*.log
+README.md
+.vscode
+.idea
+.claude
+Dockerfile
+.dockerignore
+docker-compose.yml
+Marvin_Fischer_CV.pdf
