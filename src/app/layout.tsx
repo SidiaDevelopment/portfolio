@@ -13,6 +13,10 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://sidia.net"),
+  alternates: {
+    canonical: "/",
+  },
   title: "Marvin Fischer | Game & Web Developer",
   description:
     "Portfolio of Marvin Fischer — a Game & Web developer crafting modern web experiences and interactive applications.",
