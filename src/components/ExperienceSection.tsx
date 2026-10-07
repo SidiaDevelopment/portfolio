@@ -42,7 +42,7 @@ const experience: Job[] = [
         description:
           "A roguelite action RPG about surviving endless waves of monsters. 100+ heroes, a deep build-crafting system, and competitive multiplayer modes on top.",
         tags: ["Unity", "C#", "Mobile", "RPG"],
-        image: "/heroes-vs-hordes.jpg",
+        image: "/heroes-vs-hordes.webp",
         links: [
           { type: "appStore", href: "https://apps.apple.com/us/app/heroes-vs-hordes-survival-rpg/id1608898173" },
           { type: "playStore", href: "https://play.google.com/store/apps/details?id=com.swiftgames.survival" },
@@ -53,7 +53,7 @@ const experience: Job[] = [
         description:
           "A mobile survival game in the Walking Dead universe, built on the same roguelite combat foundations we developed at the studio.",
         tags: ["Unity", "C#", "Mobile"],
-        image: "/twd-aftermath.png",
+        image: "/twd-aftermath.webp",
         links: [
           { type: "appStore", href: "https://apps.apple.com/pl/app/the-walking-dead-aftermath/id6751237805" },
           { type: "playStore", href: "https://play.google.com/store/apps/details?id=com.ares.twd" },
@@ -90,7 +90,7 @@ const experience: Job[] = [
         description:
           "Physics-based puzzle game, over 250 million downloads. You pull pins in the right order to guide balls into a container while avoiding bombs, black holes and other hazards.",
         tags: ["Unity", "C#", "Mobile", "Puzzle"],
-        image: "/pull-the-pin.png",
+        image: "/pull-the-pin.webp",
         links: [
           { type: "appStore", href: "https://apps.apple.com/us/app/pull-the-pin/id1496150467" },
           { type: "playStore", href: "https://play.google.com/store/apps/details?id=com.maroieqrwlk.unpin" },
@@ -101,7 +101,7 @@ const experience: Job[] = [
         description:
           "Casual puzzle game, over 130 million downloads. You untangle crowded parking lots by sliding cars out in the right order, working around obstacles and a wandering granny that gets in the way.",
         tags: ["Unity", "C#", "Mobile", "Puzzle"],
-        image: "/parking-jam.png",
+        image: "/parking-jam.webp",
         links: [
           { type: "appStore", href: "https://apps.apple.com/us/app/parking-jam-3d/id1498229533" },
           { type: "playStore", href: "https://play.google.com/store/apps/details?id=com.lszenlamzr.parkingjam" },
@@ -112,14 +112,14 @@ const experience: Job[] = [
         description:
           "Swipe-based puzzle game. Every cube on the board moves at the same time, so filling the board in as few moves as possible takes some planning ahead.",
         tags: ["Unity", "C#", "Mobile", "Puzzle"],
-        image: "/color-swipe.jpg",
+        image: "/color-swipe.webp",
       },
       {
         title: "Paint the Cube",
         description:
           "Roll a cube around a grid and paint each tile it lands on, until the whole board is covered.",
         tags: ["Unity", "C#", "Mobile", "Puzzle"],
-        image: "/paint-the-cube.jpg",
+        image: "/paint-the-cube.webp",
         links: [
           { type: "playStore", href: "https://play.google.com/store/apps/details?hl=en&id=com.iewagaicho.paintthecube" },
         ],
@@ -129,7 +129,7 @@ const experience: Job[] = [
         description:
           "Block-stacking puzzle game built around quick decisions and combo scoring.",
         tags: ["Unity", "C#", "Mobile", "Puzzle"],
-        image: "/clash-of-blocks.jpg",
+        image: "/clash-of-blocks.webp",
         links: [
           { type: "appStore", href: "https://apps.apple.com/us/app/clash-of-blocks/id1485268556" },
           { type: "playStore", href: "https://play.google.com/store/apps/details?id=com.eqrwiodfk.clashofblocks" },
@@ -295,6 +295,7 @@ export default function ExperienceSection() {
                                         href={link.href}
                                         target="_blank"
                                         rel="noopener noreferrer"
+                                        aria-label={`${label}: ${project.title}`}
                                         className="flex items-center gap-1.5 text-sm font-medium text-neon-400 underline decoration-neon-400/30 underline-offset-4 transition-colors hover:text-magenta-400 hover:decoration-magenta-400/60"
                                       >
                                         <Icon size={16} />
