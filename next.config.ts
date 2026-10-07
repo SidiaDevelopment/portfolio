@@ -6,6 +6,10 @@ const nextConfig: NextConfig = {
     unoptimized: true,
     qualities: [75, 95],
   },
+  experimental: {
+    // Inline the (small) stylesheet into the HTML so it doesn't block first render
+    inlineCss: true,
+  },
 };
 
 export default nextConfig;
